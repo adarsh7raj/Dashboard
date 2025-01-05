@@ -31,7 +31,7 @@ export const Avatar = function({ name }: Name_type) {
                     className="rounded-full w-[40px] h-[40px] bg-slate-200 p-1 cursor-pointer"
                     onClick={toggleDropdown}
                 >
-                    <p className="text-center">{name[0].toUpperCase()}</p>
+                    <p className="text-center">{name?name[0].toUpperCase():"😊"}</p>
                 </div>
 
                 {/* Dropdown menu */}
