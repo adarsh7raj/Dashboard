@@ -35,7 +35,7 @@ interface friend{
         <div className="h-screen flex justify-between  overflow-y-hidden ">
           
             <div className="  hidden md:block  ">
-                <Friends username={username||"😊"} friend_detail={friends}/>
+                <Friends username={username||"?"} friend_detail={friends}/>
             </div>
 
             {/* Message box (scrollable) */}

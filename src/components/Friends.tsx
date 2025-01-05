@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Bluechat from "./Bluechat";
-import { useLastMessage } from "../hooks/message";
+
 import { FriendsCard } from "./friend_card";
 import { Link } from "react-router-dom";
 interface Friend {
