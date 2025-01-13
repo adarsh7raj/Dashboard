@@ -6,14 +6,22 @@
 import { useState, useRef, useEffect } from "react";
 import { useLastMessage } from "../hooks/message";
 import { Avatar } from "./avatar";
-
+interface Friend {
+  id: number;
+  name: string;
+  LastMessage: string;
+  email: string;
+  location: string;
+  icon: string;
+  profile_pic:string
+}
 interface MessageBox {
   name: string;
   updateLastMessage:(friendName: string, message: string) => void;
-  email:string|undefined
+  friend_detail:Friend|undefined
 }
 
-export const MessageBox = ({ name,updateLastMessage,email }: MessageBox) => {
+export const MessageBox = ({ name,updateLastMessage,friend_detail }: MessageBox) => {
   const { messages, addMessage } = useLastMessage(name);
   const [sentMessage, setSentMessage] = useState<string>("");
 
@@ -39,11 +47,11 @@ export const MessageBox = ({ name,updateLastMessage,email }: MessageBox) => {
       <div className="border border-gray-300 rounded-lg overflow-hidden w-[500px] h-screen bg-white shadow-lg">
         <div className="flex items-center bg-gray-300 text-gray-600 font-semibold text-lg p-4">
           <span className="text-gray-500 mr-4">
-            <Avatar name={name} />
+            <Avatar name={name} profile_pic={friend_detail?.profile_pic} />
           </span>
           <div className="flex flex-col">
           <div>{name}</div>
-          <div className="text-sm">{email}</div>
+          <div className="text-sm">{friend_detail?.email}</div>
           </div>
          
         </div>

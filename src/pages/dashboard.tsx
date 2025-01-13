@@ -43,9 +43,9 @@ interface friend{
 
             {/* Message box (scrollable) */}
             <div className=" h-full">
-                <MessageBox name={username || "?"} updateLastMessage={updatelastMessage} email={(friends.find(function(friend){
+                <MessageBox name={username || "?"} updateLastMessage={updatelastMessage} friend_detail={(friends.find(function(friend){
                     return friend.name===username
-                }))?.email} />
+                }))} />
             </div>
             <div><User user_detail={friends.find(function(friend){
                 return friend.name=== username
