@@ -10,6 +10,7 @@ interface Friend {
   email: string;
   location: string;
   icon: string;
+  profile_pic:string
 }
 
 interface FriendsProps {
@@ -71,7 +72,7 @@ export const Friends = ({ username, friend_detail }: FriendsProps) => {
         {friend_detail.map((user) => (
           <div key={user.id} className="flex items-center mb-4 w-[300px]">
             <Link to={`/${user.name}`}>
-            <FriendsCard friendname={user.name} icon={user.icon} lastmessage={user.LastMessage} selected_friend={username} />
+            <FriendsCard friendname={user.name} icon={user.icon} profile_pic={user.profile_pic} lastmessage={user.LastMessage} selected_friend={username} />
             </Link>
             
           </div>

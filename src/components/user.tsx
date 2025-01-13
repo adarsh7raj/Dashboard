@@ -1,11 +1,12 @@
 import { Avatar } from "./avatar";
 interface Friend {
     id: number ;
-    name: string | undefined,
+    name: string 
     LastMessage: string ,
     email: string ,
     location: string,
     icon: string;
+    profile_pic:string
   }
 interface User{
     user_detail:Friend| undefined
@@ -15,7 +16,10 @@ export const User=function({user_detail}:User){
 
         <div>
             <div className="flex flex-col justify-between items-center w-[400px] h-[620px]">
-<Avatar name={user_detail?.name}></Avatar>
+                <div className=" ">
+                <Avatar name={user_detail?.name} profile_pic={user_detail?.profile_pic}></Avatar>
+                </div>
+
 <h4>{user_detail?.name}</h4>
 <p>11:59pm in {user_detail?.location}</p>
 <div className="flex justify-around w-[80%]">

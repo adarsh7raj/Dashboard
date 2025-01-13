@@ -4,13 +4,14 @@ import { useNavigate } from "react-router-dom";
 
 interface Name_type {
     name: string|undefined;
+    profile_pic:string | undefined
 }
 
-export const Avatar = function({ name }: Name_type) {
+export const Avatar = function({ name,profile_pic }: Name_type) {
     const [isOpen, setIsOpen] = useState(false);
 
     const navigate = useNavigate();
-
+    console.log(profile_pic);
     // Toggle the dropdown menu
     const toggleDropdown = () => setIsOpen(prev => !prev);
 
@@ -25,13 +26,14 @@ export const Avatar = function({ name }: Name_type) {
 
     return (
         <>
-            <div className="relative">
+            <div className="">
                 {/* Avatar that toggles dropdown on click */}
                 <div
-                    className="rounded-full w-[40px] h-[40px] bg-slate-200 p-1 cursor-pointer"
+                    className={`rounded-full   w-[45px] h-[45px] ${profile_pic?"":"bg-slate-300"}  p-1 cursor-pointer`}
                     onClick={toggleDropdown}
                 >
-                    <p className="text-center">{name?name[0].toUpperCase():"😊"}</p>
+                
+                   {profile_pic?<img className="w-full h-full object-cover" src={profile_pic}></img>: <p className="text-center">{name?name[0].toUpperCase():"😊"}</p>}
                 </div>
 
                 {/* Dropdown menu */}

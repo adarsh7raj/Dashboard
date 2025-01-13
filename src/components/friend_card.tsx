@@ -5,12 +5,13 @@ interface FriendDetail {
  
     friendname: string;
     icon: string;
+    profile_pic:string;
     lastmessage: string;
     selected_friend:string
   }
 
 
-export const FriendsCard = function ({ friendname, icon ,lastmessage, selected_friend }: FriendDetail) {
+export const FriendsCard = function ({ friendname, icon ,profile_pic,lastmessage, selected_friend }: FriendDetail) {
   
   return (
     <div
@@ -23,7 +24,7 @@ export const FriendsCard = function ({ friendname, icon ,lastmessage, selected_f
       {/* Friend Avatar and Name */}
       <div className="flex justify-between w-full  space-x-4 ">
         
-        <Avatar name={friendname} />
+        <Avatar name={friendname} profile_pic={profile_pic} />
         <div className="text-base md:text-lg font-semibold text-gray-800">
           {friendname}
         </div>
